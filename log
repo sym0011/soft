@@ -1,0 +1,54 @@
+HTML
+
+<html>
+<head>
+<title> Login Page </title>
+</head>
+<body>
+<center> <h1> Student Login Form </h1> </center>
+<label>Username : </label>
+<input type="text" name="username" required> <br>
+<label>Password : </label>
+<input type="password" name="password" required> <br>
+<a href = "D:\YMI\sample.html">
+<button type="submit">Login</button>
+</a>
+</body>
+</html>
+
+JAVA
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class test2 {
+	public static void main(String args[]) {
+		
+        System.setProperty("webdriver.chrome.driver","D:\\eclipse\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		String baseUrl="D:\\eclipse\\log.html";
+		driver.get(baseUrl);
+		driver.findElement(By.id("username")).sendKeys("user@gmail.com");
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		driver.findElement(By.xpath("/html/body/input[2]")).sendKeys("password321");
+		driver.findElement(By.id("btn")).click();
+		driver.get(baseUrl);
+		String title=driver.getTitle();
+		if(title.equals("Login Page")){
+			
+			System.out.println("Login Successful");
+		}
+		else{
+			
+			System.out.println("Login failed");
+		}
+		driver.close();
+			
+	}
+
+}
