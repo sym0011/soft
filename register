@@ -1,0 +1,46 @@
+HTML
+
+<html>
+<body>
+<center><h1>sample check box</h1></center><br>
+<input type="checkbox" id="bca" name="bca" checked>
+<label for="bca">BCA</label><br>
+<input type="checkbox" id="it" name="it" checked>
+<label for="it">INFORMATION TECHNOLOGY</label><br>
+<input type="checkbox" id="cs" name="cs" checked>
+<label for="cs">COMPUTER SCIENCE</label><br>
+<input type="checkbox" id="ds" name="ds">
+<label for="ds">DATA SCIENCE</label><br>
+</body>
+</html>
+
+JAVA
+
+import java.util.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+class test
+{
+public static void main(String args[])
+{
+System.setProperty("webdriver.chrome.driver","D:\\eclipse\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+WebDriver driver = new ChromeDriver();
+driver.get("D:\\eclipse\\register.html");
+int chk = 0;
+int unchk = 0;
+List <WebElement> els = driver.findElements(By.xpath("//input[@type='checkbox']"));
+for(WebElement el : els)
+{
+if(el.isSelected()) {
+chk++;
+}
+else{
+unchk++;
+}
+}
+System.out.println("Total checked items = " + chk);
+System.out.println("Total unchecked items = " + unchk);
+}
+}
