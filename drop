@@ -1,0 +1,34 @@
+HTML
+
+<html>
+<title> Example Drop down Box </title>
+<body>
+Name:
+<select name="names" id = "jmc" Placeholder="select name">
+<option value="aba"> Basheer Ahamed</option>
+<option value="spb"> PeerBasha </option>
+<option value="aus"> ShabeerAhamed </option>
+<option value="ymi"> Mohammed Iqbal </option>
+</select>
+</body>
+</html>
+
+JAVA
+
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+public class Ex9
+{ public static void main(String[] args)
+{
+System.setProperty("webdriver.chrome.driver","D:\\eclipse\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+WebDriver driver = new ChromeDriver();
+driver.get"D:\\eclipse\\drop.html");
+Select se = new Select(driver.findElement(By.xpath("//*[@id=\"jmc\"]")));
+List< WebElement> l = se.getOptions();
+System.out.println("Number of items = "+l.size());
+}
+}
