@@ -23,7 +23,7 @@ public static void main(String[] args)
 {
 System.setProperty("webdriver.chrome.driver","D:\\eclipse\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
 WebDriver driver = new ChromeDriver();
-driver.get("D:\\eclipse\\anchor.html";
+driver.get("D:\\eclipse\\anchor.html");
 List< WebElement> mylist = driver.findElements(By.xpath("//a"));
 System.out.println("Number of links = "+mylist.size());
 }
