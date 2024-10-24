@@ -26,7 +26,7 @@ public class Ex9
 {
 System.setProperty("webdriver.chrome.driver","D:\\eclipse\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
 WebDriver driver = new ChromeDriver();
-driver.get"D:\\eclipse\\drop.html");
+driver.get("D:\\eclipse\\drop.html");
 Select se = new Select(driver.findElement(By.xpath("//*[@id=\"jmc\"]")));
 List< WebElement> l = se.getOptions();
 System.out.println("Number of items = "+l.size());
